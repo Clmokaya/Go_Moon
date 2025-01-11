@@ -12,10 +12,12 @@ class App extends StatelessWidget{
   Widget build(BuildContext context) {
   return MaterialApp(
     title:'GoMoon',
-    theme: ThemeData(scaffoldBackgroundColor:Color.fromRGBO(100, 31, 31, 1.0 ),
+    theme: ThemeData(scaffoldBackgroundColor: Color.fromARGB(100, 31, 31, 31)),
+   home: Homepage(
+   ),
   // ignore: prefer_const_constructors
   
-   ) );
+   );
 
   }
 
