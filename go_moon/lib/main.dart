@@ -7,13 +7,13 @@ void main() {
 
 class App extends StatelessWidget{
 
- const App({Key? key}) : super(key: key);
+ const App({super.key});
  @override
   Widget build(BuildContext context) {
   return MaterialApp(
     title:'GoMoon',
-    theme: ThemeData(scaffoldBackgroundColor: Color.fromARGB(100, 31, 31, 31)),
-   home: Homepage(
+    theme: ThemeData(scaffoldBackgroundColor: const Color.fromARGB(100, 31, 31, 31)),
+   home:  Homepage(
    ),
   // ignore: prefer_const_constructors
   
@@ -86,10 +86,10 @@ class App extends StatelessWidget{
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: const FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
