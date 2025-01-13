@@ -14,7 +14,15 @@ late double _deviceHeight, _deviceWidth;
   height: _deviceHeight,
   width: _deviceHeight,
  padding: EdgeInsets.symmetric(horizontal: _deviceWidth * 0.05),
- child:_destinationDropDownWidget() ,))
+ child:Column(
+  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  mainAxisSize: MainAxisSize.max,
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    _pageTitle(),
+    _destinationDropDownWidget(),
+  ],
+ ) ,))
  );   
   }
 Widget _pageTitle(){
@@ -38,14 +46,35 @@ Widget _pageTitle(){
 
   }
 Widget _destinationDropDownWidget(){
-  List <DropdownMenuItem<String>> _items =[
+  List <String> _items =[
     'James Web Station',
     'Mokaya Station',
-     ].map((e){return DropdownMenuItem(child: Text(e), value: e, );}).toList();
+     ];
   return Container(
+    padding: EdgeInsets.symmetric(horizontal:_deviceWidth*0.05 ),
+    width: _deviceWidth,
+    decoration: BoxDecoration(color: const Color.fromRGBO(53,
+     53, 
+     53, 
+     1.0
+     ),
+     borderRadius: BorderRadius.circular(10)
+     ),
+     
     child:DropdownButton(
-     onChanged:(_){},
-      items: _items,
+      value: _items.first,
+     onChanged: (_){},
+      items: _items.map(
+        (e){
+          return DropdownMenuItem(
+            child: Text(e),
+            value: e,
+          );
+        }
+      ).toList(),
+      underline: Container(),
+      dropdownColor: const Color.fromRGBO(53, 53, 53, 1.0),
+      style: TextStyle(color:Colors.white ),
      ),
      );
 
