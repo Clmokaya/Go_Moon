@@ -10,6 +10,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'GoMoon',
       theme: ThemeData(
           scaffoldBackgroundColor: const Color.fromARGB(100, 31, 31, 31)),
